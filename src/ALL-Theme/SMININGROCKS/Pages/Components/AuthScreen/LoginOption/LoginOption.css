@@ -1,0 +1,97 @@
+
+.loginDailog{
+    margin-inline: 6%;
+    background-color: white;
+    padding: 15px;
+    color: rgb(95,73,122);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.smilingLoginOptionMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.loginDiTile{
+    color: rgb(95,73,122);
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 25px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.loginMail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(239,229,255);
+    color: rgb(95,73,122);
+    margin-inline: 7px;
+    height: 55px;
+    cursor: pointer;
+    width: 25%;
+    margin-top: 30px;
+}
+.loginMobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(239,229,255);
+    color: rgb(95,73,122);
+    margin-inline: 7px;
+    height: 55px;
+    cursor: pointer;
+    margin-top: 25px;
+    width: 25%;
+}
+
+@media screen and (max-width: 1150px) {
+
+    .loginMail{
+        width: 50%!important;
+    }
+
+    .loginMobile{
+        width: 50%!important;
+    }
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+    .loginDailog{
+        margin-inline: 2%!important;
+    }
+
+}
+    @media screen and (max-width: 700px) {
+
+    .loginMail{
+        width: 80%!important;
+    }
+
+    .loginMobile{
+        width: 80%!important;
+    }
+
+    .loginDiTile{
+        font-size: 25px;
+    }
+
+}
+
+
+@media screen and (max-width: 400px) {
+
+    .loginMail{
+        width: 95%!important;
+    }
+
+    .loginMobile{
+        width: 95%!important;
+    }
+}
