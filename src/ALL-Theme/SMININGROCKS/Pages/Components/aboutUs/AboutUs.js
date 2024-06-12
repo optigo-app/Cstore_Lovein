@@ -39,7 +39,9 @@ export default function AboutUs() {
                 <div className='daimondsEveryAboutSub'>
                     <div style={{
                         paddingBlock: '70px'
-                    }}>
+                    }}
+                     className=' daimondsEveryAboutSubTitle'
+                     >
                         {/* <p style={{
                             textAlign: 'center',
                             fontSize: '15px',

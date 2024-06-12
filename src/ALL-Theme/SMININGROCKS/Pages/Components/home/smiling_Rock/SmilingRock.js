@@ -45,8 +45,8 @@ export default function SmilingRock() {
 
                 </div>
                 <div className='smilingRockBox'>
-                    <div className='smilingRockBoxSub1'>
-                        <img className="simple-card__img" style={{opacity:'1'}} src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/CompanyData/ComapnyIconImg3.png`} srcset={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/CompanyData/ComapnyIconImg3.png`} alt="" />
+                    <div className='smilingRockBoxSub1' style={{marginBottom: '15px'}}>
+                        <img style={{opacity:'1', maxHeight :'75px' , marginTop :'-13px'}} src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/CompanyData/ComapnyIconImg3.png`} srcset={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/CompanyData/ComapnyIconImg3.png`} alt="" />
                     </div>
                     <div className='smilingRockBoxSub2'>
 

@@ -125,6 +125,8 @@ export default function Header() {
     setMenul0data(tempMenu0data)
     setMenul1data(tempMenu1data)
     setMenul2data(tempMenu2data)
+
+    console.log('menuDatamenuData', menuData);
   };
 
   const handelNewMenuData = (param) => {
@@ -555,7 +557,7 @@ export default function Header() {
             <div
               style={{
                 display: "flex",
-                margin: "20px",
+                margin: "10px",
               }}
             >
               <div
@@ -668,7 +670,7 @@ export default function Header() {
               </div>)}
             </div>
             <div className="smlingDraweOverlayMain">
-              <div className="drawrTitlediv">
+              {islogin === 'true' && (<div className="drawrTitlediv">
                 <p
                   style={{
                     margin: "0px",
@@ -693,8 +695,8 @@ export default function Header() {
                     }
                   </li>
                 </ul>
-              </div>
-              <div className="drawrTitlediv" style={{ marginTop: "20px" }}>
+              </div>)}
+              {islogin === 'true' && (<div className="drawrTitlediv" style={{ marginTop: "20px" }}>
                 <p
                   style={{
                     margin: "0px",
@@ -724,8 +726,8 @@ export default function Header() {
                     }
                   </li>
                 </ul>
-              </div>
-              <div className="drawrTitlediv" style={{ marginTop: "20px" }}>
+              </div>)}
+              {islogin === 'true' && (<div className="drawrTitlediv" style={{ marginTop: "20px" }}>
                 <p
                   style={{
                     margin: "0px",
@@ -751,7 +753,7 @@ export default function Header() {
                     }
                   </li>
                 </ul>
-              </div>
+              </div>)}
               <div onClick={() => { toggleDrawerOverlay(); navigation("/impact"); }}>
                 <p className="drawrTitle">IMPACT</p>
               </div>
@@ -768,7 +770,7 @@ export default function Header() {
                     style={{ cursor: "pointer", color: 'white' }}
                     onClick={() => { toggleDrawerOverlay(); navigation("/account"); }}
                   >
-                    <p style={{ color: "white", margin: "0px", fontSize: '12px', fontWeight: 500 }}>{ACCOUNT}</p>
+                    <p style={{ color: "rgb(95,73,122)", margin: "0px", fontSize: '12px', fontWeight: 500 }}>{ACCOUNT}</p>
                   </div>
                 )
                 }
@@ -778,18 +780,20 @@ export default function Header() {
                     style={{ cursor: "pointer", color: 'white' }}
                     onClick={() => { toggleDrawerOverlay(); navigation("/LoginOption"); }}
                   >
-                    <p style={{ color: "white", margin: "0px", fontSize: '12px', fontWeight: 500 }}>{LOGIN}</p>
+                    <p style={{ color: "rgb(95,73,122)", margin: "0px", fontSize: '12px', fontWeight: 500 }}>{LOGIN}</p>
                   </div>
                 )
                 }
-                <p
-                  style={{ color: "white", marginTop: "10px", fontSize: '13px', fontWeight: 500, letterSpacing: '1' }}
+                {islogin === 'true' && (<p
+                  style={{ color: "rgb(95,73,122)", marginTop: "10px", fontSize: '13px', fontWeight: 500, letterSpacing: '1' }}
                   onClick={() => { toggleDrawerOverlay(); navigation("/myWishList"); }}
                 >
                   Wishlist
                 </p>
+                )
+                }
               </div>
-              <div
+              {/* <div
                 style={{
                   display: "flex",
                   borderBottom: "1px solid white",
@@ -820,7 +824,7 @@ export default function Header() {
                     marginInline: "5px",
                   }}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </>
