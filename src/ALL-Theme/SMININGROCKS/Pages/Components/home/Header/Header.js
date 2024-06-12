@@ -52,6 +52,18 @@ export default function Header() {
   const setNewMenuData = useSetRecoilState(newMenuData)
   // console.log("menu1Index",finalData?.map((fd)=>fd?.param1)[menu1Index])
 
+  const [storeInit,setStoreInit] = useState();
+
+  useEffect(()=>{
+    setTimeout(()=>{
+        if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+            let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+            console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+            setStoreInit(storeinit)
+        }
+    },800)
+},[])
+
   const separateData = (menuData) => {
     // let tempMenu0data = [];
     // let tempMenu1data = [];
@@ -1111,8 +1123,8 @@ export default function Header() {
             </div>
 
             <div style={{ display: 'flex', gap: '15px' }}>
-              <img src={`${storImagePath()}/images/Menu/Menu1.jpg`} alt="#" className="menuImages" />
-              <img src={`${storImagePath()}/images/Menu/Menu2.jpg`} alt="#" className="menuImages" />
+              <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/Menu/Menu1.jpg`} alt="#" className="menuImages" />
+              <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/Menu/Menu2.jpg`} alt="#" className="menuImages" />
             </div>
 
           </div>

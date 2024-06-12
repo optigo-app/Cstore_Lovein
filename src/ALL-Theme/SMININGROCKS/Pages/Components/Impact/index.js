@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import "./index.css";
 import i1 from "../../assets/Impact/campaign/banner.webp";
 import Campaign from "./campaign/Campaign";
@@ -7,7 +7,20 @@ import Explore from "./Explore/Explore";
 import { storImagePath } from "../../../Utils/globalFunctions/GlobalFunction";
 import Footer from "../home/Footer/Footer";
 
-const index = () => {
+const Index = () => {
+
+  const [storeInit,setStoreInit] = useState();
+
+  useEffect(()=>{
+    setTimeout(()=>{
+        if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+            let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+            console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+            setStoreInit(storeinit)
+        }
+    },800)
+},[])
+  
   return (
     <>
       <div style={{ paddingTop: '110px', background: '#efe5ff' }}>
@@ -21,7 +34,7 @@ const index = () => {
           /> */}
           <div className="impact-container2"></div>
         </div>
-        <img src={`${storImagePath()}/images/HomePage/Impact/ImpactMainBanner1.jpg`} alt="..." style={{ width: '100%' }} />
+        <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactMainBanner1.jpg`} alt="..." style={{ width: '100%' }} />
         <div
           style={{
             display: "flex",
@@ -114,7 +127,7 @@ const index = () => {
           {/* <Explore/> */}
         </div>
         <div className="my-5" style={{ background: '#efe5ff' }}>
-          <img src={`${storImagePath()}/images/HomePage/Impact/ImpactMainBanner2.jpg`} alt="..." style={{ width: '100%' }} />
+          <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactMainBanner2.jpg`} alt="..." style={{ width: '100%' }} />
         </div>
         <div style={{ marginTop: '-15%', background: 'white' }}>
           <Footer />
@@ -136,4 +149,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import ImpCards from "../impact-cards/ImpCards";
 import SustainAbility from "../../sustainAbility/SustainAbility";
 import jointlogo from '../../../assets/Impact/campaign/jointlogo.avif'

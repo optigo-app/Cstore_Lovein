@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React,{ useEffect, useState } from "react";
 import "./FeaturedCollection.css";
 import { Cards } from "../HomeCards/Cards";
 import "slick-carousel/slick/slick.css";
@@ -11,6 +11,18 @@ export default function FeaturedCollection() {
   const [ring2ImageChange, setRing2ImageChange] = useState(false);
   const [ring3ImageChange, setRing3ImageChange] = useState(false);
   const [ring4ImageChange, setRing4ImageChange] = useState(false);
+
+  const [storeInit,setStoreInit] = useState();
+
+  useEffect(()=>{
+    setTimeout(()=>{
+        if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+            let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+            console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+            setStoreInit(storeinit)
+        }
+    },800)
+},[])
 
   const settings = {
     dots: true,
@@ -185,7 +197,7 @@ export default function FeaturedCollection() {
           </Slider>
           <div className="linkingLoveImage">
             <img
-              src={`${storImagePath()}/images/HomePage/Future/FutureImageMain1.jpg`}
+              src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Future/FutureImageMain1.jpg`}
               className="linkingLoveImageDesign"
             />
           </div>
@@ -201,7 +213,7 @@ export default function FeaturedCollection() {
         <div style={{ display: 'flex' }}>
           <div className="linkingLoveImage">
             <img
-              src={`${storImagePath()}/images/HomePage/BottombBanner/BottomBanner2.jpg`}
+              src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/BottombBanner/BottomBanner2.jpg`}
               className="linkingLoveImageDesign"
             />
           </div>

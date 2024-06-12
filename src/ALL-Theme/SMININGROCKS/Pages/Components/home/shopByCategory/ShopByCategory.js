@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import './ShopByCategory.css'
 // import shop1 from '../../../assets/Lovein/c1.jpg'
 // import shop2 from '../../../assets/Lovein/c2.jpg'
