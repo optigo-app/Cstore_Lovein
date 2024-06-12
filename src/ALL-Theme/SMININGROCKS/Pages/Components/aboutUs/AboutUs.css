@@ -109,11 +109,49 @@
 
 @media screen and (max-width: 1200px) {
 
+
+
+    .smining-about-title {
+        padding: 20px 0px !important;
+    }
+
+    .daimondsEveryAboutSubTitle {
+        padding-block: 10px !important;
+    }
+
+    .daimondsEveryAbout {
+        margin-inline: 1% !important;
+    }
+
     .about-daimondBoxMain {
         display: flex;
         flex-direction: column;
         margin-inline: 10px;
     }
+
+    .about-daimondBox11 {
+        order: 2 !important;
+    }
+
+    .about-daimondBoxMains {
+        display: flex;
+        flex-direction: column;
+        margin-inline: 10px;
+    }
+
+    .about-daimondBox21 {
+        height: auto !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .about-daimondBox11 {
+        width: 100% !important;
+        margin-top: 10px;
+    }
+
 
     .about-daimondBox1 {
         width: 100%;

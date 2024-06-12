@@ -2220,7 +2220,7 @@ const ProductList = () => {
                           onMouseEnter={() => handleHoverImageShow(products?.MediumImagePath?.split(",")[0], i, products?.RollOverImageName, globImagePath)}
                           // onMouseEnter={() => handleHoverImageShow(products?.MediumImagePath?.split(",")[0], i, isColorWiseImageShow === 1 ? products?.ColorWiseRollOverImageName : products?.RollOverImageName, products?.imagepath)}
                           onMouseLeave={() => handleMouseLeave(i)}
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'contain' }}
                           alt="#"
                         />
                       </div>

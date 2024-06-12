@@ -1870,14 +1870,16 @@ export default function CartPage() {
                                 <div>
                                   <div className='feature'>
                                     <p>
-                                      <span className="feature-count">CWT :{" "} </span>  {item?.Rec_CSWeight} /{" "}
-                                      {item?.totalcolorstonepcs}
+                                      <span className="feature-count">CWT :{" "} </span>  
+                                      {item?.Rec_CSWeight ? `${item.Rec_CSWeight.toFixed(3)}` : null}
+                                      {item?.totalcolorstonepcs ? ` / ${item.totalcolorstonepcs.toFixed(3)}` : null}
                                     </p>
                                   </div>
                                   <div className='feature'>
                                     <p>
-                                      <span className="feature-count">GWT :{" "}  </span>   {item?.grossweight}
-                                      {item?.totaldiamondpcs}
+                                      <span className="feature-count">GWT: </span>
+                                      {item?.grossweight ? `${item.grossweight.toFixed(3)}` : null}
+                                      {item?.totaldiamondpcs ? ` / ${item.totaldiamondpcs.toFixed(3)}` : null}
                                     </p>
                                   </div>
                                   {/* <div className='feature'>
@@ -2030,8 +2032,8 @@ export default function CartPage() {
                 <div
                   style={{
                     display: "flex",
-                    justifyContent:"center",
-                    padding:'0px 20px 0px 20px'
+                    justifyContent: "center",
+                    padding: '0px 20px 0px 20px'
                   }}
                 >
                   <Grid container spacing={2}>
@@ -2151,8 +2153,6 @@ export default function CartPage() {
       <Dialog
         onClose={() => setDialogOpen(false)}
         open={dialogOpen}
-        // fullWidth
-        // maxWidth={"xl"}
         fullScreen
       >
         {!isLoading && (
@@ -2188,7 +2188,8 @@ export default function CartPage() {
                   style={{
                     border: "1px solid #e1e1e1",
                     borderRadius: "12px",
-                    width: "35%",
+                    width: "95%",
+                    minHeight: '250px',
                   }}
                 />
 
