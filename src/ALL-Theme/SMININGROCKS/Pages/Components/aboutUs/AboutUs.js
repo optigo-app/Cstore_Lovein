@@ -6,17 +6,17 @@ import Footer from '../home/Footer/Footer'
 import { storImagePath } from '../../../Utils/globalFunctions/GlobalFunction'
 
 export default function AboutUs() {
-    const [storeInit,setStoreInit] = useState();
+    // const [storeInit,setStoreInit] = useState();
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
-                let storeinit = JSON.parse(localStorage.getItem("storeInit"))
-                console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
-                setStoreInit(storeinit)
-            }
-        },800)
-    },[])
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+    //             let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+    //             console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+    //             setStoreInit(storeinit)
+    //         }
+    //     },800)
+    // },[])
     return (
         <div className='paddingTopMobileSet' style={{ paddingTop: '110px', background: '#efe5ff' }}>
             {/* https://cdn.accentuate.io/19336364132/3641674891364/Stocksy_txpdd2f673ddEJ200_Medium_1086442.jpg?1733x1155 */}
@@ -76,13 +76,13 @@ export default function AboutUs() {
                             </p>
                         </div>
                         <div className='about-daimondBox21'>
-                            <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/AboutUs/AboutUsImg1.png`} className='about-daimondBox21-image' />
+                            <img src={`${storImagePath()}/images/HomePage/AboutUs/AboutUsImg1.png`} className='about-daimondBox21-image' />
                         </div>
                     </div>
 
                     <div className='about-daimondBoxMain' style={{ marginTop: '80px' }}>
                         <div className='about-daimondBox2'>
-                            <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/AboutUs/AboutUsImg2.jpg`} className='about-daimondBox2-image' />
+                            <img src={`${storImagePath()}/images/HomePage/AboutUs/AboutUsImg2.jpg`} className='about-daimondBox2-image' />
                         </div>
                         <div className='about-daimondBox1'>
                             <p style={{ fontSize: '25px', color: '#3f3151' }}>VISION</p>
@@ -109,7 +109,7 @@ export default function AboutUs() {
                             </p>
                         </div>
                         <div className='about-daimondBox2'>
-                            <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/AboutUs/AboutUsImg3.jpeg`} className='about-daimondBox2-image' />
+                            <img src={`${storImagePath()}/images/HomePage/AboutUs/AboutUsImg3.jpeg`} className='about-daimondBox2-image' />
                         </div>
                     </div>
                 </div>

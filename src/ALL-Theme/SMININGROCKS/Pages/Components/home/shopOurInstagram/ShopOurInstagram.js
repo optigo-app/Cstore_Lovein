@@ -16,17 +16,17 @@ export default function ShopOurInstagram() {
 
     const [showOverlay, setShowOverlay] = useState(false);
     const inputRef = useRef(null);
-    const [storeInit,setStoreInit] = useState();
+    // const [storeInit,setStoreInit] = useState();
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
-                let storeinit = JSON.parse(localStorage.getItem("storeInit"))
-                console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
-                setStoreInit(storeinit)
-            }
-        },800)
-    },[])
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+    //             let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+    //             console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+    //             setStoreInit(storeinit)
+    //         }
+    //     },800)
+    // },[])
 
     const settings = {
         dots: false,
@@ -164,7 +164,7 @@ export default function ShopOurInstagram() {
                             <div className='socialIcon'>
                                 <AiFillInstagram />
                             </div>
-                            <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia1.jpg`} className='shopInimage1' />
+                            <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia1.jpg`} className='shopInimage1' />
                         </a>
                     </div>
                     <div className='shopInimage'>
@@ -172,7 +172,7 @@ export default function ShopOurInstagram() {
                             <div className='socialIcon'>
                                 <FaFacebookF />
                             </div>
-                            <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia2.jpg`} className='shopInimage2' />
+                            <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia2.jpg`} className='shopInimage2' />
                         </a>
                     </div>
                     <div className='shopInimage'>
@@ -180,7 +180,7 @@ export default function ShopOurInstagram() {
                             <div className='socialIcon'>
                                 <FaLinkedin />
                             </div>
-                            <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia3.jpg`} className='shopInimage3' />
+                            <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia3.jpg`} className='shopInimage3' />
                         </a>
                     </div>
                     <div className='shopInimage'>
@@ -188,7 +188,7 @@ export default function ShopOurInstagram() {
                             <div className='socialIcon'>
                                 <FaPinterest />
                             </div>
-                            <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia4.jpg`} className='shopInimage4' />
+                            <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia4.jpg`} className='shopInimage4' />
                         </a>
                     </div>
                 </div>
@@ -201,7 +201,7 @@ export default function ShopOurInstagram() {
                                 <div className='socialIcon'>
                                     <AiFillInstagram />
                                 </div>
-                                <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia1.jpg`} className='shopInimage1' />
+                                <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia1.jpg`} className='shopInimage1' />
                             </a>
                         </div>
                         <div className='shopInimage'>
@@ -209,7 +209,7 @@ export default function ShopOurInstagram() {
                                 <div className='socialIcon'>
                                     <FaFacebookF />
                                 </div>
-                                <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia2.jpg`} className='shopInimage2' />
+                                <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia2.jpg`} className='shopInimage2' />
                             </a>
                         </div>
                     </div>
@@ -219,7 +219,7 @@ export default function ShopOurInstagram() {
                                 <div className='socialIcon'>
                                     <FaLinkedin />
                                 </div>
-                                <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia3.jpg`} className='shopInimage3' />
+                                <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia3.jpg`} className='shopInimage3' />
                             </a>
                         </div>
                         <div className='shopInimage'>
@@ -227,7 +227,7 @@ export default function ShopOurInstagram() {
                                 <div className='socialIcon'>
                                     <FaPinterest />
                                 </div>
-                                <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/SocialMedia/socialMedia4.jpg`} className='shopInimage4' />
+                                <img src={`${storImagePath()}/images/HomePage/SocialMedia/socialMedia4.jpg`} className='shopInimage4' />
                             </a>
                         </div>
                     </div>

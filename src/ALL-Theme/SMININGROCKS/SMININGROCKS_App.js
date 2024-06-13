@@ -34,7 +34,7 @@ import AccountLedgerExcel from './Pages/Components/account/accountLedgerExcelDow
 import AccountLedger from './Pages/Components/account/accountLedger/AccountLedger';
 import DebitVoucher from './Pages/Components/account/accountLedgerVouchers/debitVoucher/DebitVoucher';
 import CreditVoucher from './Pages/Components/account/accountLedgerVouchers/creditVoucher/CreditVoucher';
-import { CartListCounts, WishListCounts } from '../../Recoil/atom'
+import { CartListCounts, WishListCounts, storeInitRecoilatom } from '../../Recoil/atom'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import Payment from './Pages/Components/Payment/Payment'
 import Confirmation from './Pages/Components/confirmation/Confirmation'
@@ -44,27 +44,62 @@ import CartPage from './Pages/Components/home/Header/cartPage/CartPage'
 import CurrentVersion from "./Pages/Components/ProjectVersion/CurrentVersion"
 // import OrderHistory from './Pages/Components/account/accountOrderHistory/OrderHistory';
 import { ToastContainer } from 'react-toastify';
+import axios from 'axios'
 
 export default function SMININGROCKS_App() {
 
     const location = useLocation();
     const setCartCount = useSetRecoilState(CartListCounts)
     const setWishCount = useSetRecoilState(WishListCounts)
-    const getCountFunc = async () => {
+    const[storeInitRecoil,setStoreInitrecoil] = useRecoilState(storeInitRecoilatom)
+
+    const fetchData = async () => {
+        // const APIURL = 'http://zen/api/';
+        const APIURL = 'https://api.optigoapps.com/storev26/store.aspx';
+        // const APIURL = 'https://api.optigoapps.com/test/store.aspx';
+  
+        const header = {
+          Authorization: 'Bearer optigo_json_api',
+          domain:  (window.location.hostname === 'localhost' || window.location.hostname === 'zen') ? 'astore.orail.co.in' : window.location.hostname,
+          version: 'V6',
+          sp: "1"
+          
+        };
+   
+        try {
+          const body = {
+            "con": "{\"id\":\"\",\"mode\":\"store_init\"}",
+            "p": "",
+            "f": "formname (init)",
+          };
+          const response = await axios.post(APIURL, body, { headers: header });
+          if (response.status === 200) {
+            // debugger
+            let storeInit = response.data.Data.rd[0]
+            localStorage.setItem('UploadLogicalPath', response.data.Data.rd[0].UploadLogicalPath);
+            localStorage.setItem('storeInit', JSON.stringify(response.data.Data.rd[0]));
+            localStorage.setItem('myAccountFlags', JSON.stringify(response.data.Data.rd1));
+            setStoreInitrecoil(`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}`)
+          }
+          
+        } catch (error) {
+          console.error('Error:', error );
+        }
+      }
+
+      fetchData();
+
+      const getCountFunc = async () => {
         await GetCount().then((res) => {
             if (res) {
                 setCartCount(res.CountCart)
                 setWishCount(res.WishCount)
             }
         })
-
     }
-
     useEffect(() => {
         getCountFunc();
     }, [])
-
-
 
     return (
         <>

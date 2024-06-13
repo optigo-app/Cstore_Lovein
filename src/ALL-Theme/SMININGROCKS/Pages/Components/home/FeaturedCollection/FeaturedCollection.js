@@ -12,17 +12,17 @@ export default function FeaturedCollection() {
   const [ring3ImageChange, setRing3ImageChange] = useState(false);
   const [ring4ImageChange, setRing4ImageChange] = useState(false);
 
-  const [storeInit,setStoreInit] = useState();
+//   const [storeInit,setStoreInit] = useState();
 
-  useEffect(()=>{
-    setTimeout(()=>{
-        if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
-            let storeinit = JSON.parse(localStorage.getItem("storeInit"))
-            console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
-            setStoreInit(storeinit)
-        }
-    },800)
-},[])
+//   useEffect(()=>{
+//     setTimeout(()=>{
+//         if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+//             let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+//             console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+//             setStoreInit(storeinit)
+//         }
+//     },800)
+// },[])
 
   const settings = {
     dots: true,
@@ -197,7 +197,7 @@ export default function FeaturedCollection() {
           </Slider>
           <div className="linkingLoveImage">
             <img
-              src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Future/FutureImageMain1.jpg`}
+              src={`${storImagePath()}/images/HomePage/Future/FutureImageMain1.jpg`}
               className="linkingLoveImageDesign"
             />
           </div>
@@ -213,7 +213,7 @@ export default function FeaturedCollection() {
         <div style={{ display: 'flex' }}>
           <div className="linkingLoveImage">
             <img
-              src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/BottombBanner/BottomBanner2.jpg`}
+              src={`${storImagePath()}/images/HomePage/BottombBanner/BottomBanner2.jpg`}
               className="linkingLoveImageDesign"
             />
           </div>

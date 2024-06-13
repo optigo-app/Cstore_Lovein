@@ -13,17 +13,17 @@ export default function SmilingBrides() {
         navigate('/productpage')
     }
 
-    const [storeInit,setStoreInit] = useState();
+    // const [storeInit,setStoreInit] = useState();
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
-                let storeinit = JSON.parse(localStorage.getItem("storeInit"))
-                console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
-                setStoreInit(storeinit)
-            }
-        },800)
-    },[])
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+    //             let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+    //             console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+    //             setStoreInit(storeinit)
+    //         }
+    //     },800)
+    // },[])
 
     return (
         <div className='paddingTopMobileSet smilingBridesCstorMain' style={{ marginTop: '60px' }}>
@@ -47,7 +47,7 @@ export default function SmilingBrides() {
                 </div>
                 <div className='smlingBridesImages'>
                     {/* <img src={bridesImage} className='smilingMainImages' alt={''} /> */}
-                    <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Promo/Banner/PromoBanner2.jpg`} className='smilingMainImages' alt={''} />
+                    <img src={`${storImagePath()}/images/HomePage/Promo/Banner/PromoBanner2.jpg`} className='smilingMainImages' alt={''} />
                 </div>
             </div>
         </div>

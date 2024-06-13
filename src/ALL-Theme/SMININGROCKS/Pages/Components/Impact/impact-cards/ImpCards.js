@@ -21,37 +21,37 @@ import { storImagePath } from "../../../../Utils/globalFunctions/GlobalFunction"
 const ImpCards = () => {
 
 
-  const [storeInit,setStoreInit] = useState();
+//   const [storeInit,setStoreInit] = useState();
 
 
-  useEffect(()=>{
-    setTimeout(()=>{
-        if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
-            let storeinit = JSON.parse(localStorage.getItem("storeInit"))
-            console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
-            setStoreInit(storeinit)
-        }
-    },800)
-},[])
+//   useEffect(()=>{
+//     setTimeout(()=>{
+//         if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+//             let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+//             console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+//             setStoreInit(storeinit)
+//         }
+//     },800)
+// },[])
 
 
-  let subBannerChild1 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner1.jpg`
-  let subBannerChild2 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner2.jpg`
-  let subBannerChild3 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner3.jpg`
-  let subBannerChild4 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner5.jpg`
-  let subBannerChild5 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner6.jpg`
-  let subBannerChild6 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner7.jpg`
-  let subBannerChild7 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner8.jpg`
-  let subBannerChild8 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner10.jpg`
-  let subBannerChild9 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner11.jpg`
-  let subBannerChild10 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner12.jpg`
-  let subBannerChild11 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner13.jpg`
-  let subBannerChild12 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner15.jpg`
-  let subBannerChild13 = `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBannerChildBanner17.jpg`
+  let subBannerChild1 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner1.jpg`
+  let subBannerChild2 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner2.jpg`
+  let subBannerChild3 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner3.jpg`
+  let subBannerChild4 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner5.jpg`
+  let subBannerChild5 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner6.jpg`
+  let subBannerChild6 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner7.jpg`
+  let subBannerChild7 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner8.jpg`
+  let subBannerChild8 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner10.jpg`
+  let subBannerChild9 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner11.jpg`
+  let subBannerChild10 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner12.jpg`
+  let subBannerChild11 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner13.jpg`
+  let subBannerChild12 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner15.jpg`
+  let subBannerChild13 = `${storImagePath()}/images/HomePage/Impact/ImpactSubBannerChildBanner17.jpg`
 
   const JsonData = [
     {
-      banner:`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBanner1.jpg`,
+      banner:`${storImagePath()}/images/HomePage/Impact/ImpactSubBanner1.jpg`,
       // icon: hat,
       title: "RESPONSIBLE SUPPLY CHAINS. HUMANRIGHTS & DUE DILIGENCE",
       descript:
@@ -59,7 +59,7 @@ const ImpCards = () => {
       fund: [{ i: subBannerChild1 }, { i: subBannerChild4 },{ i: subBannerChild8 },{ i: subBannerChild9 },{ i: subBannerChild13 }]
     },
     {
-      banner:`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBanner2.jpg`,
+      banner:`${storImagePath()}/images/HomePage/Impact/ImpactSubBanner2.jpg`,
       icon: leaf,
       title: "LABOUR RIGHTS & WORKING CONDITIONS",
       descript:
@@ -67,7 +67,7 @@ const ImpCards = () => {
       fund: [{ i: subBannerChild1 }, { i: subBannerChild2 },{ i: subBannerChild4 },{ i: subBannerChild7 },{ i: subBannerChild8 }]
     },
     {
-      banner:`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBanner3.jpg`,
+      banner:`${storImagePath()}/images/HomePage/Impact/ImpactSubBanner3.jpg`,
       icon: heart,
       title: "HEALTH, SAFETY & ENVIRONMENT",
       descript:
@@ -81,7 +81,7 @@ const ImpCards = () => {
       fund: [{ i: subBannerChild3 }, { i: subBannerChild5 },{ i: subBannerChild6 },{ i: subBannerChild10 },{ i: subBannerChild11 }]
     },
     {
-      banner:`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Impact/ImpactSubBanner4.jpg`,
+      banner:`${storImagePath()}/images/HomePage/Impact/ImpactSubBanner4.jpg`,
       icon: paws,
       title: "RESPONSIBLE GROWING",
       descript:

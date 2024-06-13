@@ -12,17 +12,17 @@ import ReactPlayer from 'react-player'
 
 export default function ShopifySection() {
 
-    const [storeInit,setStoreInit] = useState();
+    // const [storeInit,setStoreInit] = useState();
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
-                let storeinit = JSON.parse(localStorage.getItem("storeInit"))
-                console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
-                setStoreInit(storeinit)
-            }
-        },800)
-    },[])
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         if(Object.keys(JSON.parse(localStorage.getItem("storeInit")))?.length){
+    //             let storeinit = JSON.parse(localStorage.getItem("storeInit"))
+    //             console.log("storeinit",storeinit?.UploadLogicalPath,storeinit?.ukey,storeinit?.ufcc)
+    //             setStoreInit(storeinit)
+    //         }
+    //     },800)
+    // },[])
 
 
     const dataJSON = [
@@ -31,7 +31,7 @@ export default function ShopifySection() {
             Title: 'Craftsmanship',
             Decription: 'With our exquisite collection of diamond rings, earrings, necklaces, pendants, bracelets, and fashionable fine jewelry of all kinds, we offer a stunning range of exquisitely Hand-crafted fine jewelry.We have a unique and spectacular way of styling our designs. Only the best lab-grown diamonds, labgrown colored diamonds, and precious metals are used by us. Every piece of jewelry is individually handcrafted beyond imagination, and our wide assortment guarantees that they will discover the precise grace and design that perfectly captures the significant events in their lives and appeals to their unique persona and lifestyles in your cases. Join us in our journey to experience the whimsical world of lab-grown diamond jewelry!',
             // Link: 'DISCOVER MORE',
-            images: `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/BottombBanner/BottombBanner2.jpg`
+            images: `${storImagePath()}/images/HomePage/BottombBanner/BottombBanner2.jpg`
         },
         // {
         //     id: 1,
@@ -53,14 +53,14 @@ export default function ShopifySection() {
             Decription: "We believe that every diamond is a testament to the enduring power of love. Our slogan, 'Where Love Shines the Brightest,' encapsulates our dedication to crafting exquisite lab-grown diamonds and high-finished jewelry that radiate with love's brilliance. Diamonds have long been revered as symbols of love, embodying strength, purity, and everlasting commitment. As manufacturers of high-end jewelry, we understand the profound significance that diamonds hold in celebrating life's most cherished moments. From engagement rings to anniversary gifts, each piece we create is imbued with the timeless essence of love, illuminating the hearts of those who wear them.",
             // SubDecription: "The wonder of 5 decades. Welcome to wonderful world of Love in Diamonds. House of incredible shapes & rare colours with magnificent designs of unparalleled collections & a stunning range of exquisitely handcrafted fine diamond jewelry. Love in Diamonds offers the upmost customer satisfaction to demonstrate this with our exquisite collection of diamond rings, earrings, necklaces, pendants, bracelets, and fashionable fine jewelry of all kinds with unique & spectacular way of styling our designs which is individually handcrafted beyond imagination. That is how we like to introduce our story. ",
             // Link: 'DISCOVER',
-            images: `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/BottombBanner/BottombBanner1.jpg`
+            images: `${storImagePath()}/images/HomePage/BottombBanner/BottombBanner1.jpg`
         },
         {
             id: 3,
             Title: 'BRAND STORY',
             Decription: "Love In Diamonds is a premier manufacturer of high-end, impeccably finished lab-grown diamond jewelry. Our journey began with a vision to capture the essence of love and beauty through exquisite craftsmanship. With a commitment to sustainability and innovation, we bring to life the brilliance of lab-grown diamonds in stunning designs that reflect elegance and sophistication. Each piece is meticulously crafted to illuminate your style and celebrate the moments that matter most. Discover the radiance of love with Love In Diamonds.",
             // Link: 'DISCOVER',
-            images: `${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/BottombBanner/BottombBanner3.jpg`
+            images: `${storImagePath()}/images/HomePage/BottombBanner/BottombBanner3.jpg`
         },
         // {
         //     id: 4,
@@ -105,12 +105,12 @@ export default function ShopifySection() {
                         </video> */}
 
                         {/* <Video videoUrl={'https://www.youtube.com/shorts/6_K0BWuRQf0'} videoId="DkVfi2ApzwQ" width='100%' height="600px" /> */}
-                        {/* <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/BottombBanner/BottomBanner1.jpg`} style={{ height: '600px', width: '100%', objectFit:'cover' }} /> */}
+                        {/* <img src={`${storImagePath()}/images/HomePage/BottombBanner/BottomBanner1.jpg`} style={{ height: '600px', width: '100%', objectFit:'cover' }} /> */}
                     </div>
                 </div>
                 <div className='shopifyMain'>
                     <div className='shopifyMainImage'>
-                        <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/Promo/Set/1/promoSetMainBanner.jpg`} style={{ height: '600px', width: '100%', objectFit: 'cover' }} />
+                        <img src={`${storImagePath()}/images/HomePage/Promo/Set/1/promoSetMainBanner.jpg`} style={{ height: '600px', width: '100%', objectFit: 'cover' }} />
                     </div>
                     <div className='shopifyDesc'>
                         <p className='shopifyTitle' style={{ textTransform: 'uppercase' }}>WHERE LOVE SHINES THE BRIGHTEST</p>
@@ -133,7 +133,7 @@ export default function ShopifySection() {
                         {/* <p style={{ fontSize: '12px', letterSpacing: '1px' }}>{data.Link}</p> */}
                     </div>
                     <div className='shopifyMainImage shopifyMainImage3'>
-                        <img src={`${storeInit?.UploadLogicalPath}/${storeInit?.ukey}/${storeInit?.ufcc}/images/HomePage/BottombBanner/BottomBanner3.png`} className='ShopifyMainImage3' style={{ height: '600px', width: '100%', objectFit: 'contain' }} />
+                        <img src={`${storImagePath()}/images/HomePage/BottombBanner/BottomBanner3.png`} className='ShopifyMainImage3' style={{ height: '600px', width: '100%', objectFit: 'contain' }} />
                     </div>
                 </div>
             </div>
